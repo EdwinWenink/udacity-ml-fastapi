@@ -31,6 +31,13 @@ def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop(outliers.index, axis='index')
 
     return df
+
+
+def feature_engineering(
+    X: pd.DataFrame, categorical_features: List[str] = [],
+    label: str = '', training: bool = True,
+    encoder: OneHotEncoder = None,
+    lb: LabelBinarizer = None
 ):
     """ Process the data used in the machine learning pipeline.
 
@@ -71,11 +78,10 @@ def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         passed in.
     """
 
-    if label is not None:
-        y = X[label]
-        X = X.drop([label], axis=1)
+    if label:
+        y = X.pop(label)
     else:
-        y = np.array([])
+        y = pd.Series([])
 
     X_categorical = X[categorical_features].values
     X_continuous = X.drop(*[categorical_features], axis=1)
