@@ -1,5 +1,8 @@
+from typing import List
+
 import pandas as pd
 import numpy as np
+from scipy import stats
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
 
@@ -7,8 +10,27 @@ def load_csv(uri: str) -> pd.DataFrame:
     return pd.read_csv(uri)
 
 
-def process_data(
-    X, categorical_features=[], label=None, training=True, encoder=None, lb=None
+def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
+    '''
+    Preprocess the data set.
+    See src/eda.py for insights underlying these decisions.
+    '''
+    # Register missing values ('?') as NaN
+    df = df.replace('?', np.nan)
+
+    # Drop rows with missing observations
+    df = df.dropna()
+
+    # `capital-gain` and `capital-loss` have many zeros and outliers
+    # Let's combine them so at least the zeros are combined into a single column
+    df['capital-change'] = df['capital-gain'] - df['capital-loss']
+
+    # Drop outliers defined on non-zero capital change
+    df_non_zero_change = df[df['capital-change'] > 0]
+    outliers = df_non_zero_change[np.abs(stats.zscore(df_non_zero_change['capital-change'])) > 3]
+    df = df.drop(outliers.index, axis='index')
+
+    return df
 ):
     """ Process the data used in the machine learning pipeline.
 

@@ -21,12 +21,15 @@ def test_import(import_data: Callable, valid_input_path):
         logger.error("Input data wasn't found at expected path %s", valid_input_path)
         raise err
 
+
+def test_input_size():
     try:
         assert pytest.df.shape[0] > 0
         assert pytest.df.shape[1] > 0
+        logger.info("Input dataframe has non-zero dimensions.")
     except AssertionError as err:
         logger.error(
-            "Testing import_data: The file doesn't appear to have rows and columns")
+            "The input dataframe doesn't appear to have rows and columns")
         raise err
 
 
@@ -36,7 +39,7 @@ def test_df_keys():
     '''
     try:
         logger.info("Dataframe keys: %s", pytest.df.keys())
-        logger.info("Expected columns: %s", pytest.expected_cols)
-        assert set(pytest.df.keys()) == set(pytest.expected_cols)
+        logger.info("Expected columns: %s", pytest.expected_input_cols)
+        assert set(pytest.df.keys()) == set(pytest.expected_input_cols)
     except AssertionError:
         logger.error("Input data does not have the expected columns.")
