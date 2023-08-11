@@ -10,13 +10,20 @@ logger.addHandler(logging.StreamHandler())
 def test_capital_change_col(preprocessed_data: pd.DataFrame):
     """
     The preprocessing introduces a column called 'capital-change'.
-    Check it is present.
+    Check if it is present and the old columns are dropped.
     """
     try:
         assert 'capital-change' in preprocessed_data.columns
-        logger.info("Columns `capital-change` present as expected.")
+        logger.info("Column `capital-change` present as expected.")
     except AssertionError:
-        logger.error("Columns `capital-change` missing.")
+        logger.error("Column `capital-change` missing.")
+
+    try:
+        assert 'capital-gain' not in preprocessed_data.columns
+        assert 'capital-loss' not in preprocessed_data.columns
+        logger.info("Columns `capital-gain` and `capital-loss` were dropped.")
+    except AssertionError:
+        logger.error("Columns `capital-gain` and `capital-loss` were not dropped.")
 
 
 def test_preprocessed_size():

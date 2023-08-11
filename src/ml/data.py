@@ -25,6 +25,9 @@ def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     # Let's combine them so at least the zeros are combined into a single column
     df['capital-change'] = df['capital-gain'] - df['capital-loss']
 
+    # Drop the old columns
+    df = df.drop(['capital-gain', 'capital-loss'], axis='columns')
+
     # Drop outliers defined on non-zero capital change
     df_non_zero_change = df[df['capital-change'] > 0]
     outliers = df_non_zero_change[np.abs(stats.zscore(df_non_zero_change['capital-change'])) > 3]
