@@ -1,8 +1,9 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.base import BaseEstimator
 
 
 # Optional: implement hyperparameter tuning.
-def train_model(X_train, y_train):
+def train_model(clf, X_train, y_train):
     """
     Trains a machine learning model and returns it.
 
@@ -14,11 +15,11 @@ def train_model(X_train, y_train):
         Labels.
     Returns
     -------
-    model
+    model: sklearn BaseEstimator
         Trained machine learning model.
     """
-
-    pass
+    clf.fit(X_train, y_train)
+    return clf
 
 
 def compute_model_metrics(y, preds):
@@ -43,12 +44,12 @@ def compute_model_metrics(y, preds):
     return precision, recall, fbeta
 
 
-def inference(model, X):
+def inference(clf, X):
     """ Run model inferences and return the predictions.
 
     Inputs
     ------
-    model : ???
+    model : sklearn BaseEstimator
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -57,4 +58,5 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    y = clf.predict(X)
+    return y

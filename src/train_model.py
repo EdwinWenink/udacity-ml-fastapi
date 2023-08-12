@@ -8,8 +8,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 
+from src.ml.model import train_model, compute_model_metrics, inference
 from src.ml.data import load_csv, preprocessing, feature_engineering
 
+
+# Data preparation
+# ----------------
 
 # Load census data
 df = load_csv('data/census.csv')
@@ -35,7 +39,7 @@ cat_features = [
 # Target label
 target_label = "salary"
 
-# Preprocessing
+# Feature engineering
 X_train, y_train, encoder, lb = feature_engineering(
     df_train, categorical_features=cat_features, label=target_label, training=True
 )
@@ -46,6 +50,17 @@ X_test, y_test, _, _ = feature_engineering(
     training=False, encoder=encoder, lb=lb
 )
 
+# Training
+# --------
+
+# TODO I didn't notice but use the functions from src.ml.model
+#
+# def train_model(X_train, y_train):
+#
+# def compute_model_metrics(y, preds):
+#
+# def inference(model, X):
+
 # Model parameters
 params = {
     'n_estimators': 200
@@ -54,12 +69,23 @@ params = {
 # Decision tree
 clf = RandomForestClassifier(**params)
 
-# Train and save a model.
-clf.fit(X_train, y_train)
+# Train model.
+clf = train_model(clf, X_train, y_train)
+
+# Save model
 joblib.dump(clf, filename='model/random_forest.pkl')
 
+# Evaluation
+# ----------
+
 # Predict
-y_pred = clf.predict(X_test)
+y_pred = inference(clf, X_test)
+
+# Model metrics overall
+precision, recall, fbeta = compute_model_metrics(y_test, y_pred)
+print("Precision:", precision)
+print("Recall:", recall)
+print("Fbeta:", fbeta)
 
 # Confusion matrix
 cm = confusion_matrix(y_test, y_pred)
@@ -68,3 +94,10 @@ print("Confusion matrix:\n", cm)
 # Classification_report
 report = classification_report(y_test, y_pred)
 print("\nClassification report:\n", report)
+
+# TODO
+# - Write a function that outputs the performance of the model on slices of the data.
+#   Suggestion: for simplicity, the function can just output the performance on slices
+#   of just the categorical features.
+# - Write a model card
+# - Write unit tests for at least 3 functions in the model code
