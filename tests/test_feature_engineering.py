@@ -19,3 +19,5 @@ def test_binary_label(target_label):
         logger.info("Target label is binary.")
     except AssertionError:
         logger.error("Target label is not binary.")
+
+# TODO test expected labels
