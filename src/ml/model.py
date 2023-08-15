@@ -67,6 +67,7 @@ def inference(clf, X):
 def load_model(model_uri: str):
     """
     Load a picked trained model.
+    NOTE: this should include required data transforms.
     """
     with open(model_uri, "rb") as fhandle:
         model = pickle.load(fhandle)

@@ -7,6 +7,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.pipeline import make_pipeline
+from sklearn.compose import ColumnTransformer
 
 from src.ml.model import train_model, compute_model_metrics, inference
 from src.ml.data import load_csv, preprocessing, feature_engineering
@@ -40,26 +42,24 @@ cat_features = [
 target_label = "salary"
 
 # Feature engineering
-X_train, y_train, encoder, lb = feature_engineering(
+X_train, y_train, column_transformer, lb = feature_engineering(
     df_train, categorical_features=cat_features, label=target_label, training=True
 )
+
+# Print encoding of target labels for interpretation
+assert len(lb.classes_) == 2
+print("Label interpretation:")
+for true_label, encoded_label in zip(lb.classes_, lb.transform(lb.classes_)):
+    print(f"{true_label}: {encoded_label}")
 
 # Process the test data using the fitted OneHotEncoder and label binarizer
 X_test, y_test, _, _ = feature_engineering(
     df_test, categorical_features=cat_features, label=target_label,
-    training=False, encoder=encoder, lb=lb
+    training=False, column_transformer=column_transformer, lb=lb
 )
 
 # Training
 # --------
-
-# TODO I didn't notice but use the functions from src.ml.model
-#
-# def train_model(X_train, y_train):
-#
-# def compute_model_metrics(y, preds):
-#
-# def inference(model, X):
 
 # Model parameters
 params = {
@@ -72,12 +72,14 @@ clf = RandomForestClassifier(**params)
 # Train model.
 clf = train_model(clf, X_train, y_train)
 
-# Save model
+# Save model including data transforms
+pipe = make_pipeline(column_transformer, clf)
+
 model_path = 'model/random_forest.pkl'
 with open(model_path, 'wb') as fhandle:
-    pickle.dump(clf, file=fhandle)
+    pickle.dump(pipe, file=fhandle)
 
-print("Saved fitted model to", model_path)
+print("Saved fitted model incl. data transforms to", model_path)
 
 
 # Evaluation
