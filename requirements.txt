@@ -8,3 +8,9 @@ requests
 fastapi==0.63.0
 uvicorn
 gunicorn
+httpx
+pydantic >= 2
+
+# NOTE ydata-profiling 4.5.0 requires pydantic<2,>=1.8.1,
+# Is latest version compatible with pydantic v2?
+# My code currently uses pydantic > 2.1
