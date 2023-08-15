@@ -1,8 +1,12 @@
+"""
+FastAPI using Pydantic v1
+"""
+
 from typing import Union
 from enum import Enum
 
 from fastapi import FastAPI, Depends, HTTPException
-from pydantic import BaseModel, Field, field_validator, ConfigDict
+from pydantic import BaseModel, Field, validator, ConfigDict
 from sklearn.exceptions import InconsistentVersionWarning
 
 from src.ml.data import feature_engineering
@@ -24,8 +28,11 @@ class CensusData(BaseModel):
     #  'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'salary']
 
     # Automatically generate aliases for names with hyphens where underscores are used instead
-    # because hyphens cannot be used in field names in Python.
-    model_config = ConfigDict(alias_generator=hyphen_to_underscore)
+    # because hyphens cannot be used in field names in Python. In Pydantic v2 this would be:
+    # model_config = ConfigDict(alias_generator=hyphen_to_underscore)
+    # In v1 (1.10) this is written as:
+    class Config:
+        alias_genator = hyphen_to_underscore
 
     age: int = Field(..., example=39)
     workclass: str = Field(..., example='State-gov')
@@ -44,7 +51,7 @@ class CensusData(BaseModel):
     salary: str = Field(..., example="<=50K")
 
     # NOTE in pydantic v1 this is called @validator I think
-    @field_validator("age")
+    @validator("age")
     @classmethod
     def valid_age(cls, value):
         if value < 0:
@@ -53,8 +60,8 @@ class CensusData(BaseModel):
         if value > 0:
             raise ValueError("Age is higher than reasonable.")
 
-    @field_validator("salary", "education_num", "fnlgt", "capital_gain",
-                     "capital_loss", "hours_per_week")
+    @validator("salary", "education_num", "fnlgt", "capital_gain",
+               "capital_loss", "hours_per_week")
     @classmethod
     def non_negative(cls, value):
         if value < 0:
@@ -95,7 +102,7 @@ async def get_predictions(data: CensusData):
     '''
 
     # Do some checks on input data
-    if data.feature_1 < 0:
+    if data.age < 0:
         raise HTTPException(
             status_code=400,
             detail="feature_1 needs to be above 0."
