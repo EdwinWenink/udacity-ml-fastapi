@@ -60,7 +60,6 @@ def test_greeting_at_root():
 
 def test_post_inference_valid_input():
     r = client.post("/inference/", data=json.dumps(VALID_INFERENCE_INPUT))
-    # Validation Error response
     assert r.status_code == 200
 
 
@@ -73,4 +72,5 @@ def test_post_inference_output_type():
 def test_post_inference_invalid_input():
     r = client.post("/inference/", data=json.dumps(INVALID_INFERENCE_INPUT))
     print(r.status_code)
+    # Validation Error response
     assert r.status_code == 422
