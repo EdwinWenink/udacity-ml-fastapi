@@ -1,7 +1,7 @@
 '''
 Script to train a simple machine learning model.
 '''
-import joblib
+import pickle
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -73,7 +73,12 @@ clf = RandomForestClassifier(**params)
 clf = train_model(clf, X_train, y_train)
 
 # Save model
-joblib.dump(clf, filename='model/random_forest.pkl')
+model_path = 'model/random_forest.pkl'
+with open(model_path, 'wb') as fhandle:
+    pickle.dump(clf, file=fhandle)
+
+print("Saved fitted model to", model_path)
+
 
 # Evaluation
 # ----------

@@ -1,3 +1,5 @@
+import pickle
+
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.base import BaseEstimator
 
@@ -60,3 +62,12 @@ def inference(clf, X):
     """
     y = clf.predict(X)
     return y
+
+
+def load_model(model_uri: str):
+    """
+    Load a picked trained model.
+    """
+    with open(model_uri, "rb") as fhandle:
+        model = pickle.load(fhandle)
+    return model
