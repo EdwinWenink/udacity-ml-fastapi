@@ -89,9 +89,10 @@ def feature_engineering(
 
     if training is True:
         # OneHotEncoder should only apply to categorical features
-        column_transformer = ColumnTransformer([('encoder',
-                                 OneHotEncoder(sparse_output=False, handle_unknown="ignore"),
-                                 categorical_features)])
+        column_transformer = ColumnTransformer(
+            [('encoder',
+              OneHotEncoder(sparse_output=False, handle_unknown="ignore"),
+              categorical_features)])
 
         lb = LabelBinarizer()
         X = column_transformer.fit_transform(X)
