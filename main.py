@@ -32,7 +32,7 @@ class CensusData(BaseModel):
     # model_config = ConfigDict(alias_generator=hyphen_to_underscore)
     # In v1 (1.10) this is written as:
     class Config:
-        alias_genator = hyphen_to_underscore
+        alias_generator = hyphen_to_underscore
 
     age: int = Field(..., example=39)
     workclass: str = Field(..., example='State-gov')
@@ -57,15 +57,18 @@ class CensusData(BaseModel):
         if value < 0:
             raise ValueError("Age cannot be negative.")
 
-        if value > 0:
+        if value > 130:
             raise ValueError("Age is higher than reasonable.")
 
-    @validator("salary", "education_num", "fnlgt", "capital_gain",
+        return value
+
+    @validator("education_num", "fnlgt", "capital_gain",
                "capital_loss", "hours_per_week")
     @classmethod
     def non_negative(cls, value):
         if value < 0:
             raise ValueError(f"Value cannot be negative. {value} received.")
+        return value
 
 
 app = FastAPI(
@@ -75,6 +78,7 @@ app = FastAPI(
 )
 
 try:
+    # TODO use DVC; this model is not yet available in the repo
     CLF = load_model('model/random_forest.pkl')
 except InconsistentVersionWarning as warning:
     print(warning.original_sklearn_version)
@@ -89,6 +93,8 @@ async def get_root():
 @app.post("/inference/")
 async def get_predictions(data: CensusData):
 
+    print(data)
+    print(type(data))
     # TODO repeat correct preprocessing and feature engineering
     # as done during training (incl. label encoder etc.)
     '''
@@ -101,15 +107,11 @@ async def get_predictions(data: CensusData):
     )
     '''
 
-    # Do some checks on input data
-    if data.age < 0:
-        raise HTTPException(
-            status_code=400,
-            detail="feature_1 needs to be above 0."
-        )
-
     # clf: fixed? Use getter?
     # Or allow model selection?
-    y = inference(CLF, data)
+    # y = inference(CLF, data)
 
-    return y
+    y = [0, 1]
+    # return y
+
+    return data
