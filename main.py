@@ -102,4 +102,4 @@ async def get_prediction(data: CensusData):
 
     # Perform inference. The inference artifact includes data transforms.
     y = inference(CLF, df)
-    return int(y)
+    return {'prediction': int(y)}
