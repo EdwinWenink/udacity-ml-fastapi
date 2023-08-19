@@ -82,6 +82,7 @@ def feature_engineering(
         passed in.
     """
 
+    X = X.copy()
     if label:
         y = X.pop(label)
     else:

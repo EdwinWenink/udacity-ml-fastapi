@@ -10,5 +10,6 @@ uvicorn
 gunicorn
 httpx
 pydantic <= 2
+pyyaml
 # NOTE ydata-profiling 4.5.0 requires pydantic<2,>=1.8.1,
 # This version of fastapi also requires pydantic v1
