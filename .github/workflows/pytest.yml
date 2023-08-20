@@ -31,4 +31,4 @@ jobs:
         python -m src.train_model
     - name: Pytest with code coverage
       run: |
-        python -m pytest tests/ -v --cov src
+        python -m pytest tests/ -v --cov src/ml
