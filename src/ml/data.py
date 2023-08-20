@@ -34,6 +34,10 @@ def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     outliers = df_non_zero_change[np.abs(stats.zscore(df_non_zero_change['capital-change'])) > 3]
     df = df.drop(outliers.index, axis='index')
 
+    # The column `education-num` is a label encoded `education`.
+    # We will encode `education` ourselves.
+    df = df.drop('education-num', axis='columns')
+
     return df
 
 
