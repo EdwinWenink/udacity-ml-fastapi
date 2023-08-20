@@ -24,7 +24,7 @@ def train_model(clf, X_train, y_train):
     return clf
 
 
-def compute_model_metrics(y, preds):
+def compute_model_metrics(y, preds, beta=1):
     """
     Validates the trained machine learning model using precision, recall, and F1.
 
@@ -40,9 +40,16 @@ def compute_model_metrics(y, preds):
     recall : float
     fbeta : float
     """
-    fbeta = float(fbeta_score(y, preds, beta=1, zero_division=1))
-    precision = float(precision_score(y, preds, zero_division=1))
-    recall = float(recall_score(y, preds, zero_division=1))
+    # `zero_division` determines the behavior of e.g. recall in absence of positive labels.
+    # When there are no positive labels, this function will return a recall of 1.0
+    positive_label = 1
+    zero_division = 1
+    fbeta = float(fbeta_score(y, preds, beta=beta, zero_division=zero_division,
+                              pos_label=positive_label))
+    precision = float(precision_score(y, preds, zero_division=zero_division,
+                                      pos_label=positive_label))
+    recall = float(recall_score(y, preds, zero_division=zero_division,
+                                pos_label=positive_label))
     return precision, recall, fbeta
 
 
