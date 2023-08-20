@@ -137,8 +137,5 @@ for cat_feature in cat_features:
 slice_eval_file = 'slice_evaluation.yaml'
 print(f"Writing evaluation of data slices to file {slice_eval_file}.")
 with open(slice_eval_file, 'w') as fhandle:
-    yaml.dump(results, fhandle)
-
-# TODO
-# - Write a model card
-# - Write unit tests for at least 3 functions in the model code
+    yaml.safe_dump(results, fhandle)
+    print(yaml.safe_dump(results))
