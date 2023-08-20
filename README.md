@@ -30,3 +30,8 @@ To see the API docs, visit the API address appended with `/docs` in your browser
 ## Run tests
 
 Unit tests, including local tests of the API, can be run with `python -m pytest tests`.
+
+## Model Card
+
+See [here](./model_card.md).
+

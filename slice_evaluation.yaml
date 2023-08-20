@@ -1,246 +1,246 @@
 education:
   10th:
-    f1: 0.16666666666666669
-    precision: 0.5
-    recall: 0.1
-    support: 169
-  11th:
-    f1: 0.0
+    f1: 1.0
     precision: 0.0
     recall: 0.0
-    support: 207
-  12th:
-    f1: 0.0
-    precision: 1.0
+    support: 168
+  11th:
+    f1: 1.0
+    precision: 0.0
     recall: 0.0
-    support: 62
+    support: 197
+  12th:
+    f1: 0.25
+    precision: 0.3333333333333333
+    recall: 0.2
+    support: 84
   1st-4th:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 28
+    support: 32
   5th-6th:
-    f1: 0.0
-    precision: 1.0
-    recall: 0.0
-    support: 66
-  7th-8th:
-    f1: 0.0
+    f1: 1.0
     precision: 0.0
     recall: 0.0
-    support: 118
-  9th:
-    f1: 0.0
-    precision: 1.0
+    support: 56
+  7th-8th:
+    f1: 1.0
+    precision: 0.0
     recall: 0.0
-    support: 101
+    support: 100
+  9th:
+    f1: 1.0
+    precision: 0.0
+    recall: 0.0
+    support: 80
   Assoc-acdm:
-    f1: 0.4583333333333333
-    precision: 0.4489795918367347
-    recall: 0.46808510638297873
-    support: 197
+    f1: 0.4646464646464647
+    precision: 0.5476190476190477
+    recall: 0.40350877192982454
+    support: 231
   Assoc-voc:
-    f1: 0.5132743362831858
-    precision: 0.5576923076923077
-    recall: 0.47540983606557374
-    support: 268
+    f1: 0.546875
+    precision: 0.6862745098039216
+    recall: 0.45454545454545453
+    support: 283
   Bachelors:
-    f1: 0.7488262910798122
-    precision: 0.6919739696312365
-    recall: 0.8158567774936062
-    support: 970
+    f1: 0.7402298850574712
+    precision: 0.6778947368421052
+    recall: 0.8151898734177215
+    support: 959
   Doctorate:
-    f1: 0.8039215686274508
-    precision: 0.7321428571428571
-    recall: 0.8913043478260869
-    support: 69
+    f1: 0.9009009009009009
+    precision: 0.8620689655172413
+    recall: 0.9433962264150944
+    support: 72
   HS-grad:
-    f1: 0.3020594965675057
-    precision: 0.5196850393700787
-    recall: 0.2129032258064516
-    support: 1972
+    f1: 0.2964426877470356
+    precision: 0.43103448275862066
+    recall: 0.22590361445783133
+    support: 2028
   Masters:
-    f1: 0.8073394495412844
-    precision: 0.8048780487804879
-    recall: 0.8098159509202454
-    support: 296
+    f1: 0.8135593220338982
+    precision: 0.7868852459016393
+    recall: 0.8421052631578947
+    support: 322
   Preschool:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 11
+    support: 10
   Prof-school:
-    f1: 0.8153846153846154
-    precision: 0.7794117647058824
-    recall: 0.8548387096774194
-    support: 92
+    f1: 0.8571428571428572
+    precision: 0.8354430379746836
+    recall: 0.88
+    support: 104
   Some-college:
-    f1: 0.5665399239543726
-    precision: 0.610655737704918
-    recall: 0.5283687943262412
-    support: 1377
+    f1: 0.5138004246284501
+    precision: 0.5525114155251142
+    recall: 0.4801587301587302
+    support: 1277
 marital-status:
   Divorced:
-    f1: 0.26415094339622636
-    precision: 0.4666666666666667
-    recall: 0.18421052631578946
-    support: 864
+    f1: 0.3025210084033613
+    precision: 0.4864864864864865
+    recall: 0.21951219512195122
+    support: 836
   Married-AF-spouse:
     f1: 0.0
     precision: 1.0
     recall: 0.0
-    support: 5
+    support: 3
   Married-civ-spouse:
-    f1: 0.6605119597146454
-    precision: 0.6697872340425531
-    recall: 0.6514900662251656
-    support: 2784
+    f1: 0.6488240064882401
+    precision: 0.657354149548069
+    recall: 0.6405124099279423
+    support: 2791
   Married-spouse-absent:
-    f1: 0.5
-    precision: 1.0
+    f1: 0.4
+    precision: 0.5
     recall: 0.3333333333333333
-    support: 71
+    support: 91
   Never-married:
-    f1: 0.1
-    precision: 0.38461538461538464
-    recall: 0.05747126436781609
-    support: 1937
+    f1: 0.2241379310344828
+    precision: 0.48148148148148145
+    recall: 0.14606741573033707
+    support: 1948
   Separated:
-    f1: 0.38095238095238093
-    precision: 0.8
-    recall: 0.25
-    support: 181
+    f1: 0.3157894736842105
+    precision: 0.6
+    recall: 0.21428571428571427
+    support: 188
   Widowed:
-    f1: 0.125
-    precision: 0.3333333333333333
-    recall: 0.07692307692307693
-    support: 161
+    f1: 0.23529411764705882
+    precision: 0.5
+    recall: 0.15384615384615385
+    support: 146
 native-country:
   Cambodia:
-    f1: 0.6666666666666666
+    f1: 0.0
     precision: 1.0
-    recall: 0.5
-    support: 4
+    recall: 0.0
+    support: 5
   Canada:
-    f1: 0.7272727272727272
-    precision: 0.6666666666666666
-    recall: 0.8
-    support: 17
+    f1: 0.8333333333333334
+    precision: 0.8333333333333334
+    recall: 0.8333333333333334
+    support: 20
   China:
-    f1: 0.5
+    f1: 0.5454545454545454
     precision: 0.5
-    recall: 0.5
-    support: 10
+    recall: 0.6
+    support: 18
   Columbia:
     f1: 0.0
     precision: 0.0
-    recall: 0.0
-    support: 14
+    recall: 1.0
+    support: 10
   Cuba:
-    f1: 0.6
+    f1: 0.888888888888889
     precision: 1.0
-    recall: 0.42857142857142855
-    support: 18
+    recall: 0.8
+    support: 17
   Dominican-Republic:
     f1: 1.0
     precision: 1.0
     recall: 1.0
     support: 7
   Ecuador:
-    f1: 0.5
+    f1: 1.0
     precision: 1.0
-    recall: 0.3333333333333333
-    support: 8
+    recall: 1.0
+    support: 4
   El-Salvador:
-    f1: 1.0
+    f1: 0.6666666666666666
     precision: 1.0
-    recall: 1.0
-    support: 19
+    recall: 0.5
+    support: 17
   England:
-    f1: 0.6153846153846153
-    precision: 0.5714285714285714
-    recall: 0.6666666666666666
-    support: 20
-  France:
     f1: 0.0
-    precision: 0.0
+    precision: 1.0
     recall: 0.0
-    support: 7
+    support: 16
+  France:
+    f1: 0.8
+    precision: 0.6666666666666666
+    recall: 1.0
+    support: 3
   Germany:
-    f1: 0.5263157894736842
-    precision: 0.5
-    recall: 0.5555555555555556
-    support: 25
+    f1: 0.4444444444444444
+    precision: 0.5714285714285714
+    recall: 0.36363636363636365
+    support: 28
   Greece:
+    f1: 0.4
+    precision: 0.25
+    recall: 1.0
+    support: 6
+  Guatemala:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 5
-  Guatemala:
-    f1: 0.0
-    precision: 1.0
-    recall: 0.0
-    support: 8
+    support: 12
   Haiti:
     f1: 0.0
-    precision: 0.0
-    recall: 1.0
-    support: 11
+    precision: 1.0
+    recall: 0.0
+    support: 13
   Honduras:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 5
+    support: 2
   Hong:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 7
+    support: 2
   Hungary:
-    f1: 1.0
+    f1: 0.0
     precision: 1.0
-    recall: 1.0
+    recall: 0.0
     support: 3
   India:
+    f1: 0.6
+    precision: 0.6
+    recall: 0.6
+    support: 17
+  Iran:
+    f1: 0.28571428571428575
+    precision: 0.2
+    recall: 0.5
+    support: 11
+  Ireland:
+    f1: 1.0
+    precision: 0.0
+    recall: 0.0
+    support: 6
+  Italy:
+    f1: 0.36363636363636365
+    precision: 0.5
+    recall: 0.2857142857142857
+    support: 16
+  Jamaica:
     f1: 0.5
     precision: 0.5
     recall: 0.5
-    support: 24
-  Iran:
-    f1: 0.4
-    precision: 1.0
-    recall: 0.25
-    support: 9
-  Ireland:
-    f1: 0.0
-    precision: 0.0
-    recall: 1.0
-    support: 5
-  Italy:
+    support: 15
+  Japan:
     f1: 0.5714285714285715
     precision: 0.6666666666666666
     recall: 0.5
-    support: 12
-  Jamaica:
-    f1: 0.6666666666666666
-    precision: 1.0
-    recall: 0.5
-    support: 13
-  Japan:
-    f1: 0.4444444444444445
-    precision: 0.4
-    recall: 0.5
-    support: 14
+    support: 15
   Laos:
     f1: 0.0
     precision: 0.0
-    recall: 0.0
-    support: 3
+    recall: 1.0
+    support: 2
   Mexico:
-    f1: 0.0
-    precision: 1.0
+    f1: 1.0
+    precision: 0.0
     recall: 0.0
-    support: 130
+    support: 135
   Nicaragua:
     f1: 1.0
     precision: 1.0
@@ -250,62 +250,67 @@ native-country:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 1
+    support: 2
   Peru:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 5
+    support: 8
   Philippines:
-    f1: 0.5217391304347826
-    precision: 0.42857142857142855
-    recall: 0.6666666666666666
-    support: 44
+    f1: 0.7333333333333334
+    precision: 0.6875
+    recall: 0.7857142857142857
+    support: 51
   Poland:
-    f1: 0.6666666666666666
-    precision: 1.0
-    recall: 0.5
-    support: 14
+    f1: 1.0
+    precision: 0.0
+    recall: 0.0
+    support: 10
   Portugal:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 4
+    support: 6
   Puerto-Rico:
-    f1: 0.0
-    precision: 0.0
-    recall: 0.0
+    f1: 0.5
+    precision: 0.6666666666666666
+    recall: 0.4
     support: 21
   Scotland:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 1
+    support: 2
   South:
-    f1: 0.0
+    f1: 1.0
     precision: 0.0
-    recall: 1.0
-    support: 15
+    recall: 0.0
+    support: 16
   Taiwan:
-    f1: 0.8571428571428571
-    precision: 0.75
-    recall: 1.0
-    support: 6
+    f1: 0.6666666666666666
+    precision: 0.6666666666666666
+    recall: 0.6666666666666666
+    support: 5
   Thailand:
+    f1: 1.0
+    precision: 1.0
+    recall: 1.0
+    support: 3
+  Trinadad&Tobago:
+    f1: 1.0
+    precision: 1.0
+    recall: 1.0
+    support: 3
+  United-States:
+    f1: 0.6164010882238632
+    precision: 0.6537510305028854
+    recall: 0.5830882352941177
+    support: 5460
+  Vietnam:
     f1: 0.0
     precision: 1.0
     recall: 0.0
-    support: 4
-  United-States:
-    f1: 0.6235246235246236
-    precision: 0.6701662292213474
-    recall: 0.5829528158295282
-    support: 5469
-  Vietnam:
-    f1: 0.0
-    precision: 0.0
-    recall: 0.0
-    support: 15
+    support: 10
   Yugoslavia:
     f1: 0.0
     precision: 1.0
@@ -313,176 +318,176 @@ native-country:
     support: 2
 occupation:
   Adm-clerical:
-    f1: 0.5238095238095238
-    precision: 0.5612244897959183
-    recall: 0.49107142857142855
-    support: 787
+    f1: 0.5244444444444445
+    precision: 0.5130434782608696
+    recall: 0.5363636363636364
+    support: 821
   Armed-Forces:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 1
+    support: 2
   Craft-repair:
-    f1: 0.16748768472906406
-    precision: 0.5151515151515151
-    recall: 0.1
-    support: 778
+    f1: 0.15789473684210525
+    precision: 0.47368421052631576
+    recall: 0.09473684210526316
+    support: 853
   Exec-managerial:
-    f1: 0.7888446215139443
-    precision: 0.7351485148514851
-    recall: 0.8510028653295129
-    support: 737
+    f1: 0.7765830346475506
+    precision: 0.7190265486725663
+    recall: 0.8441558441558441
+    support: 798
   Farming-fishing:
-    f1: 0.1111111111111111
-    precision: 1.0
-    recall: 0.058823529411764705
-    support: 200
+    f1: 0.2
+    precision: 0.6666666666666666
+    recall: 0.11764705882352941
+    support: 172
   Handlers-cleaners:
-    f1: 0.09523809523809525
-    precision: 0.3333333333333333
-    recall: 0.05555555555555555
-    support: 264
+    f1: 0.09523809523809523
+    precision: 0.14285714285714285
+    recall: 0.07142857142857142
+    support: 275
   Machine-op-inspct:
-    f1: 0.0909090909090909
-    precision: 0.2
-    recall: 0.058823529411764705
-    support: 401
+    f1: 0.19047619047619044
+    precision: 0.3333333333333333
+    recall: 0.13333333333333333
+    support: 395
   Other-service:
     f1: 0.0
-    precision: 0.0
+    precision: 1.0
     recall: 0.0
-    support: 641
+    support: 613
   Priv-house-serv:
     f1: 1.0
     precision: 1.0
     recall: 1.0
-    support: 42
+    support: 27
   Prof-specialty:
-    f1: 0.7177304964539007
-    precision: 0.6893732970027248
-    recall: 0.7485207100591716
-    support: 792
+    f1: 0.7241867043847241
+    precision: 0.6790450928381963
+    recall: 0.7757575757575758
+    support: 770
   Protective-serv:
-    f1: 0.68
-    precision: 0.723404255319149
-    recall: 0.6415094339622641
-    support: 134
+    f1: 0.6041666666666666
+    precision: 0.5918367346938775
+    recall: 0.6170212765957447
+    support: 146
   Sales:
-    f1: 0.5891891891891892
-    precision: 0.5767195767195767
-    recall: 0.6022099447513812
-    support: 744
+    f1: 0.5899705014749262
+    precision: 0.6410256410256411
+    recall: 0.546448087431694
+    support: 680
   Tech-support:
-    f1: 0.6837606837606837
-    precision: 0.6349206349206349
-    recall: 0.7407407407407407
-    support: 181
+    f1: 0.6212121212121213
+    precision: 0.5540540540540541
+    recall: 0.7068965517241379
+    support: 184
   Transport-moving:
-    f1: 0.08571428571428572
-    precision: 0.3
-    recall: 0.05
-    support: 301
+    f1: 0.034482758620689655
+    precision: 0.2
+    recall: 0.018867924528301886
+    support: 267
 race:
   Amer-Indian-Eskimo:
-    f1: 0.5714285714285715
-    precision: 0.6666666666666666
-    recall: 0.5
-    support: 41
+    f1: 0.35294117647058826
+    precision: 0.3333333333333333
+    recall: 0.375
+    support: 77
   Asian-Pac-Islander:
-    f1: 0.5555555555555555
-    precision: 0.5263157894736842
-    recall: 0.5882352941176471
-    support: 215
+    f1: 0.5806451612903225
+    precision: 0.6
+    recall: 0.5625
+    support: 192
   Black:
-    f1: 0.5045045045045046
-    precision: 0.5833333333333334
-    recall: 0.4444444444444444
-    support: 542
+    f1: 0.4672897196261682
+    precision: 0.5434782608695652
+    recall: 0.4098360655737705
+    support: 566
   Other:
-    f1: 0.0
-    precision: 1.0
-    recall: 0.0
-    support: 52
+    f1: 0.3333333333333333
+    precision: 0.5
+    recall: 0.25
+    support: 37
   White:
-    f1: 0.626405664306539
-    precision: 0.6720285969615728
-    recall: 0.5865834633385335
-    support: 5153
+    f1: 0.6194059405940594
+    precision: 0.6560402684563759
+    recall: 0.5866466616654163
+    support: 5131
 relationship:
   Husband:
-    f1: 0.666034155597723
-    precision: 0.6795740561471443
-    recall: 0.6530232558139535
-    support: 2455
+    f1: 0.6542404473438957
+    precision: 0.673058485139022
+    recall: 0.6364460562103355
+    support: 2452
   Not-in-family:
-    f1: 0.2198952879581152
-    precision: 0.4772727272727273
-    recall: 0.14285714285714285
-    support: 1537
+    f1: 0.2761904761904762
+    precision: 0.48333333333333334
+    recall: 0.19333333333333333
+    support: 1541
   Other-relative:
-    f1: 0.0
+    f1: 1.0
     precision: 0.0
     recall: 0.0
-    support: 196
+    support: 170
   Own-child:
-    f1: 0.0
-    precision: 1.0
+    f1: 1.0
+    precision: 0.0
     recall: 0.0
-    support: 860
+    support: 896
   Unmarried:
-    f1: 0.2
-    precision: 0.5714285714285714
-    recall: 0.12121212121212122
-    support: 668
+    f1: 0.33333333333333337
+    precision: 0.6428571428571429
+    recall: 0.225
+    support: 640
   Wife:
-    f1: 0.6415094339622641
-    precision: 0.6028368794326241
-    recall: 0.6854838709677419
-    support: 287
+    f1: 0.6222222222222222
+    precision: 0.5697674418604651
+    recall: 0.6853146853146853
+    support: 304
 sex:
   Female:
-    f1: 0.5058139534883721
-    precision: 0.5723684210526315
-    recall: 0.453125
-    support: 1957
+    f1: 0.5255474452554745
+    precision: 0.5567010309278351
+    recall: 0.4976958525345622
+    support: 1940
   Male:
-    f1: 0.6337412587412586
-    precision: 0.6744186046511628
-    recall: 0.597691673536686
-    support: 4046
+    f1: 0.6247325631151048
+    precision: 0.6636363636363637
+    recall: 0.5901374292643492
+    support: 4063
 workclass:
   Federal-gov:
-    f1: 0.726027397260274
-    precision: 0.6708860759493671
-    recall: 0.7910447761194029
-    support: 189
+    f1: 0.6447368421052632
+    precision: 0.6049382716049383
+    recall: 0.6901408450704225
+    support: 206
   Local-gov:
-    f1: 0.6302521008403362
-    precision: 0.6410256410256411
-    recall: 0.6198347107438017
-    support: 422
+    f1: 0.633587786259542
+    precision: 0.5804195804195804
+    recall: 0.6974789915966386
+    support: 416
   Private:
-    f1: 0.5915826911677534
-    precision: 0.653997378768021
-    recall: 0.54004329004329
-    support: 4444
+    f1: 0.5949656750572082
+    precision: 0.6540880503144654
+    recall: 0.5456453305351522
+    support: 4430
   Self-emp-inc:
-    f1: 0.8105726872246697
-    precision: 0.7796610169491526
-    recall: 0.8440366972477065
-    support: 190
+    f1: 0.7804878048780488
+    precision: 0.7339449541284404
+    recall: 0.8333333333333334
+    support: 191
   Self-emp-not-inc:
-    f1: 0.4834123222748815
-    precision: 0.6
-    recall: 0.40476190476190477
-    support: 522
+    f1: 0.5
+    precision: 0.6086956521739131
+    recall: 0.42424242424242425
+    support: 476
   State-gov:
-    f1: 0.6829268292682927
-    precision: 0.6461538461538462
-    recall: 0.7241379310344828
-    support: 233
+    f1: 0.641025641025641
+    precision: 0.684931506849315
+    recall: 0.6024096385542169
+    support: 280
   Without-pay:
-    f1: 1.0
-    precision: 1.0
+    f1: 0.0
+    precision: 0.0
     recall: 1.0
-    support: 3
+    support: 4
