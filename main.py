@@ -77,7 +77,7 @@ app = FastAPI(
 try:
     # TODO use DVC; this model is not yet available in the repo
     # NOTE this object should include required data transforms
-    CLF = load_model('model/random_forest.pkl')
+    INFERENCE_ARTIFACT = load_model('model/random_forest.pkl')
 except InconsistentVersionWarning as warning:
     print(warning.original_sklearn_version)
 
@@ -101,5 +101,5 @@ async def get_prediction(data: CensusData):
     df = preprocessing(df)
 
     # Perform inference. The inference artifact includes data transforms.
-    y = inference(CLF, df)
+    y = inference(INFERENCE_ARTIFACT, df)
     return {'prediction': int(y)}

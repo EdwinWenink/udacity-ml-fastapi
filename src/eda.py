@@ -18,6 +18,7 @@ Observations:
     * `native-country`
     * `capital-gain`
     * `capital-loss`
+    * There are more instance for "<=50K" (24720) than ">50K" (7841)
 - Missing values:
     * `workclass`: 1836 (5.6%)
     * `occupation`: 1843 (5.7%)

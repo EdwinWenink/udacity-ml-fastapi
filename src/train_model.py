@@ -122,13 +122,16 @@ for cat_feature in cat_features:
             df_test[filter], categorical_features=cat_features, label=target_label,
             training=False, column_transformer=column_transformer, lb=lb)
 
+        # Predict labels for the slice and compute metrics
         y_slice_pred = inference(clf, X_slice)
         precision, recall, f1 = compute_model_metrics(y_slice, y_slice_pred)
+
         # Store slice results and support
         feature_values[value] = {'precision': precision,
                                  'recall': recall,
                                  'f1': f1,
                                  'support': len(X_slice)}
+
     results[cat_feature] = feature_values
 
 slice_eval_file = 'slice_evaluation.yaml'
