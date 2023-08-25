@@ -13,6 +13,7 @@ The goal is to predict whether a person's income exceeds $50K per year based on 
 ## Install dependencies
 
 Install the project dependencies with `pip install -r requirements.txt`.
+Python 3.8.17 was used during development.
 
 ## Run API locally
 
