@@ -25,6 +25,7 @@ json_data = {"age": 39,
 
 # Submit POST request
 print("Submitting POST to", API_inference_endpoint)
+print("Post JSON body:", json_data)
 r = requests.post(url=API_inference_endpoint, json=json_data)
 
 # Print response
