@@ -32,6 +32,8 @@ To see the API docs, visit the API address appended with `/docs` in your browser
 
 Unit tests, including local tests of the API, can be run with `python -m pytest tests`.
 
+To test the live API, see `src/submit_post.py` for an example on how to submit a POST request for model inference.
+
 ## Model Card
 
 See [here](./model_card.md).
