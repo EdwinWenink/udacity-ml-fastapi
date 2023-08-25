@@ -134,7 +134,7 @@ for cat_feature in cat_features:
 
     results[cat_feature] = feature_values
 
-slice_eval_file = 'slice_evaluation.yaml'
+slice_eval_file = 'slice_output.txt'
 print(f"Writing evaluation of data slices to file {slice_eval_file}.")
 with open(slice_eval_file, 'w') as fhandle:
     yaml.safe_dump(results, fhandle)
