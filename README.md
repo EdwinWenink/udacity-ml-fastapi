@@ -38,3 +38,8 @@ To test the live API, see `src/submit_post.py` for an example on how to submit a
 
 See [here](./model_card.md).
 
+## CI/CD
+
+This repository includes a CI/CD pipeline using GitHub Actions.
+This pipeline runs `flake8`, runs all tests using `pytest`, and if all checks pass the main branch will be deployed to Render by submitting a POST request to a deploy hook.
+N.B. this deploy hook is secret and should be defined under the secret `RENDER_DEPLOY_HOOK` in Github.
