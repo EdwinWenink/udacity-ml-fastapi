@@ -32,3 +32,6 @@ jobs:
     - name: Pytest with code coverage
       run: |
         python -m pytest tests/ -v --cov src/ml
+    - name: Deployment on Render
+      run: |
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
