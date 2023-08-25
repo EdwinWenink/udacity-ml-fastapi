@@ -2,15 +2,12 @@
 FastAPI using Pydantic v1
 """
 
-from typing import Union
-from enum import Enum
-
-from fastapi import FastAPI, Depends, HTTPException
-from pydantic import BaseModel, Field, validator, ConfigDict
+from fastapi import FastAPI
+from pydantic import BaseModel, Field, validator
 from sklearn.exceptions import InconsistentVersionWarning
 import pandas as pd
 
-from src.ml.data import preprocessing, feature_engineering
+from src.ml.data import preprocessing
 from src.ml.model import inference, load_model
 
 
